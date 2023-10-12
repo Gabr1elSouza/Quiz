@@ -3,9 +3,17 @@ import { QuizContext } from '../context/quiz'
 
 const Questions = () => {
     const [quizState, dispatch] = useContext(QuizContext)
-    console.log(quizState)
-  return (
-    <div>Questions</div>
+    const currentQuestion = quizState.questions[quizState.currentQuestion]
+
+    return (
+    <div>
+        <p>Pergunta {quizState.currentQuestion +1 } de {quizState.questions.length}</p>
+        <h2>{currentQuestion.question}</h2>
+        <div id="options-container">
+                <p>option</p>
+        </div>
+        <button>Continuar</button>
+    </div>
   )
 }
 
